@@ -1,0 +1,218 @@
+// 基础样式
+@import './base.less';
+
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('./font-some/iconfont.eot');
+    src: url('./font-some/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./font-some/iconfont.woff') format('woff'),
+    url('./font-some/iconfont.ttf') format('truetype'),
+    url('./font-some/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+
+
+body{
+    overflow: hidden;
+    font-family: 'Microsoft YaHei';
+}
+
+// ////////// //
+// 修改layui  // 
+// ///////// //
+.layui-layout-admin{
+    min-width: 1400px;
+}
+
+// header顶部区域
+.layui-layout-admin .layui-header{
+    background-color: @mainBackgroundColor;
+}
+// logo
+.layui-header .logo{
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    background-color: @baseColor;
+    margin: 5px auto;
+    color: @mainBackgroundColor;
+    font-weight: bold;
+    
+}
+// 菜单底部横条
+.layui-nav-bar{
+    background-color: @baseColor;
+}
+
+
+// nav 导航区域 
+// nav-left 导航左侧
+.layui-layout-left{
+    width: 66%;
+    min-width: 800px;
+    .layui-this:after{
+        background-color: @baseColor;
+    }
+    li.layui-nav-item{
+        margin: 0 5%;
+        >a{
+            color: @fontColor;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 10px;
+        }  
+    }
+    li.layui-this{
+        a{
+            color: @baseColor;
+            &:hover{
+              color: @baseColor;
+            }
+        }
+
+    }
+}
+
+// 右侧导航
+.layui-layout-right{
+    .layui-nav-item{
+        >a{
+            color: @fontColor;
+        }
+        i{
+            color:rgba(0,0,0,.2);
+            font-size: 24px;
+        }
+        .user{
+            display: block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            border-radius: 50%;
+            background-color: @baseColor;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    .layui-nav-bar{
+        height: 0;
+    }
+    .layui-this:after{
+        background-color: transparent;
+    }
+}
+
+// 侧边导航
+.layui-side{
+    position: absolute;
+    .layui-nav-item a{
+        color: @fontColor;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+.layui-bg-white{
+    background-color: #fff;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.layui-body{
+    min-width: 1000px;
+}
+
+
+
+
+
+
+
+.layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a{
+    color: @fontColor;
+}
+
+.layui-nav-tree .layui-nav-item a:hover{
+    background-color: @baseColor;
+    color: #fff !important;
+}
+
+.layui-nav-itemed .layui-nav-more{
+    border-color: transparent transparent #888;
+}
+
+
+.layui-nav{
+    background-color: #fff;
+}
+.layui-nav-itemed>a{
+    color: @fontColor !important;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+    background-color: @baseColor;
+    color: #fff;
+}
+.layui-nav-itemed .layui-nav-child{
+    background-color: #fff !important
+}
+.layui-nav-tree .layui-nav-bar{
+    background-color: @baseColor;
+}
+.article-box{
+    box-shadow: 20px 20px 120px rgba(0,0,0,0.09) inset;
+    padding: 25px;
+}
+
+
+//tab栏
+.layui-tab-item{
+
+}
+.layui-tab-content{
+    padding: 0;
+}
+.layui-tab-item iframe{
+    width: 100%;
+    height: 500px;
+}
+
+.tab-item{
+    border-top: 1px solid @borderColor;
+    border-left: 1px solid @borderColor;
+    border-right: 1px solid @borderColor;
+    margin-right: 5px;
+}
+.layui-tab-title .layui-this:after{
+    border: none;
+    border-bottom:1px solid #fff;
+    height: 40px;
+}
+
+
+.layui-tab-title{
+
+
+}
+.layui-tab-title .layui-this{
+    color: @baseColor;
+}
+
+
+
+
+iframe{
+    border: 0;
+}

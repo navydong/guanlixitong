@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <style>
+        .layui-breadcrumb a{
+            color: #FF7C02!important;
+        }
+        .layui-breadcrumb a:hover{
+            color: #FF7C02!important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-bread">
+        <span class="layui-breadcrumb">
+            <a href="#">管控中心</a>
+            <a href="#">授权管理</a>
+            <a ><cite>机构授权</cite></a>
+        </span>
+    </div>
+
+    <script src="../asset/lib/layui/layui.js"></script>
+    <script>
+        layui.use(['element'],function(){
+            var element = layui.element;
+            var $ = layui.jquery;
+
+
+            var tabTitle = window.top.document.getElementById('tabTitle')
+            var title = $(tabTitle).find('.layui-this label').text()
+            $('.layui-breadcrumb').find('a:last cite').text(title)
+
+            var parent = $('.layui-side-scroll .layui-this', window.parent.document)
+            if(parent.parent('.layui-nav-child').length == 0){
+                var title = parent.text()
+                $('.layui-breadcrumb').html('<span class="layui-breadcrumb" style="visibility: visible;">'+
+                            '<a href="#">管控中心<span class="layui-box">&gt;</span></a>'+
+                            '<a><cite>'+ title +'</cite></a>'+
+                        '</span>')
+            }
+        })
+        window.onload = function(){
+            var date = new Date();
+            var href = window.location.href;
+            var div =  document.createElement('div')
+            div.innerHTML = `
+                时间 : ${date} <br  />
+                页面 : 打开的是 ${href}
+            `
+            document.body.appendChild(div);
+
+
+
+
+       
+       
+        }
+    </script>
+</body>
+</html>

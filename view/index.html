@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>layui</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet/less" href="../asset/less/index.less">
+    <script src="../asset/lib/less.js"></script>
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+
+        <!-- header start -->
+        <div class="layui-header">
+            <div class="layui-logo">
+                <div class="logo">logo</div>
+            </div>
+            <!-- left -->
+            <ul class="layui-nav layui-layout-left">
+                <li class="layui-nav-item"><a href="#" data-index="0">首页</a></li>
+                <li class="layui-nav-item layui-this"><a href="#" data-index="1">管控中心</a></li>
+                <li class="layui-nav-item"><a href="#" data-index="2">消息中心</a></li>
+                <li class="layui-nav-item"><a href="#" data-index="3">消息中心</a></li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">其它系统</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">邮件管理</a></dd>
+                        <dd><a href="">消息管理</a></dd>
+                        <dd><a href="">授权管理</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <!-- right -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <!-- 箭头 -->
+                    <a href="#" id="rightArrow">
+                    <i class="layui-icon" style="font-size:16px; color: #000;">&#xe602;</i>
+                </a>
+                </li>
+                <li class="layui-nav-item">
+                    <!-- 闹钟 -->
+                    <a href="#">
+                    <i class="iconfont">&#xe670;</i>
+                </a>
+                </li>
+                <li class="layui-nav-item">
+                    <!-- 皮肤 -->
+                    <a href="#">
+                    <i class="iconfont">&#xe624;</i>
+                </a>
+                </li>
+                <!-- 用户信息 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                    <i class="layui-icon user">&#xe612;</i>
+                </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">修改信息</a></dd>
+                        <dd><a href="">修改密码</a></dd>
+                        <dd><a href="">注销</a></dd>
+                        <dd><a href="">退出</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">用户名</a></li>
+            </ul>
+        </div>
+        <!-- header end -->
+
+        <!-- side nav start -->
+        <div class="layui-side layui-bg-white">
+            <div class="layui-side-scroll">
+                <!-- 侧边导航 -->
+                <!-- 首页 -->
+                <ul class="layui-nav layui-nav-tree hide" lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">首页</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;">选项1</a>
+                                
+                            </dd>
+                            <dd><a href="javascript:;">选项2</a></dd>
+                            <dd><a href="">跳转</a></dd>
+                        </dl>
+                    </li>
+                    
+                </ul>
+
+                <!-- 管控中心 -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" id="sideNav">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="javascript:;" href="javascript:;">管控中心</a>
+                        <dl class="layui-nav-child">
+                            <dd class="layui-this"><a href="javascript:;" class="site-active" data-url="content1.html"><label>列表一</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content2.html"><label>列表二</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content3.html"><label>列表三</label></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">授权管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" class="site-active" data-url="content.html"><label>角色授权</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content.html"><label>机构授权</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content.html"><label>用户授权</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content.html"><label>权限授权</label></a>
+                            </dd>
+                            <dd><a href="javascript:;" class="site-active" data-url="content.html"><label>权限授权</label></a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="javascript:;" class="site-active" data-url="content.html"><label>部署</label></a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" class="site-active" data-url="content.html"><label>监控</label></a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" class="site-active" data-url="content.html"><label>基础信息管理</label></a>
+                    </li>
+                </ul>
+
+                <!-- 消息中心 -->
+                <ul class="layui-nav layui-nav-tree hide" lay-filter="test">
+                    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">消息中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">选项1</a></dd>
+                            <dd><a href="javascript:;">选项2</a></dd>
+                            <dd><a href="javascript:;">跳转</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <!--管控中心  -->
+                <ul class="layui-nav layui-nav-tree hide" lay-filter="test">
+                    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">管控中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">选项1</a></dd>
+                            <dd><a href="javascript:;">选项2</a></dd>
+                            <dd><a href="javascript:;">跳转</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- side nav end -->
+
+        <!-- article start 选项卡 -->
+        <div class="layui-body">
+            <section class="article-box">
+                <div class="layui-tab" lay-filter="page-tab" lay-allowclose="true">
+                    <!-- tab标题 id标识-->
+                    <ul class="layui-tab-title" id="tabTitle">
+                        <li class="layui-this tab-item" lay-id="0"><label>列表一</label></li>
+                    </ul>
+                    <!-- tab内容 id标识-->
+                    <div class="layui-tab-content" id="tabContainers">
+                        <div class="layui-tab-item layui-show">
+                            <iframe src="content1.html" scrolling="auto"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+        </div>
+    </div>
+    <!-- <script src="../layui/layui.js"></script> -->
+    <script src="../layui/layui-1.09.js"></script>
+    <script src="../asset/define/index.js"></script>
+</body>
+
+</html>

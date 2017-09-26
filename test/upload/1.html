@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+        <button type="button" class="layui-btn" id="test1">
+            <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
+              
+        <form enctype="multipart/form-data" id="myForm">
+            <input type="text" name="name1" value="lasdasd">
+            <button type="button" class="layui-btn" id="upload">上传</button>
+            <input type="file" id="files" name="ss1">
+        </form>
+
+    <script src="../layui/layui.js"></script>
+    <script src="./jquery.form.js"></script>
+    
+    <script>
+        layui.use(['layer', 'upload'],function(){
+            var layer = layui.layer,
+            upload = layui.upload,
+            $ = layui.$;
+
+            var uploadInst = upload.render({
+                elem: '#test1' //绑定元素
+                ,url: '/upload/' //上传接口
+                ,auto: false
+                ,bindAction: '#upload' //指向一个按钮触发上传
+                ,done: function(res){
+                    //上传完毕回调
+                }
+                ,error: function(){
+                    //请求异常回调
+                }
+            });
+
+            $('#myForm').on('submit',function(e){
+                 e.preventDefault;
+                 $(this).ajaxSubmit({
+                     success:function(){
+
+                     }
+                 })
+            })
+
+        
+
+
+            
+        })
+
+
+        
+    </script>
+</body>
+</html>

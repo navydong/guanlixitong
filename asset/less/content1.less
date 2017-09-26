@@ -1,0 +1,129 @@
+@import './base.less';
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('./font-some/iconfont.eot');
+    src: url('./font-some/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./font-some/iconfont.woff') format('woff'),
+    url('./font-some/iconfont.ttf') format('truetype'),
+    url('./font-some/iconfont.svg#iconfont') format('svg');
+  }
+  .iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+//上部区域
+.head{
+    padding: 10px 19px;
+    border: 1px solid @borderColor;
+    border-top: none;
+    margin-bottom: 16px;
+    .layui-form-item{
+        margin-left: -15px;
+    }
+}
+// 主体区域
+.body{
+    border: 1px solid @borderColor;
+    padding: 12px;
+}
+// 表格hover效果
+.layui-table tbody tr:hover, .layui-table-hover{
+    color: @baseColor;
+    background-color: #eee!important;
+}
+
+
+
+
+
+.nav-bread{
+    margin-bottom: 20px;
+}
+//面包屑导航
+.layui-breadcrumb a{
+    color: @baseColor!important;
+    &:hover{
+        color: @baseColor!important;
+    }
+}
+
+.layui-form-item .layui-input-inline{
+    width: 160px;
+    &:nth-last-of-type(1){
+        width: 80px;
+    }
+}
+.layui-form-pane .layui-form-label{
+    width: auto;
+}
+
+.layui-btn-primary{
+    border: 1px solid #FF7C02 ;
+}
+.layui-btn-primary:hover{
+    border: 1px solid #FF7C02 ;
+}
+.layui-btn{
+    padding: 0 30px;
+    color: #FF7C02;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.layui-btn-danger{
+    color: #fff;
+}
+.layui-bg-red{
+    background-color: #FF7C02!important;
+    margin-top: 20px;
+}
+hr{
+    height: 3px;
+}
+.layui-table input[type=checkbox]{
+    width: 20px;
+    height: 15px;
+}
+
+
+.fl{
+    float: left;
+}
+.loaddata{
+   float: right;
+   margin-right: 20px;
+   height: 38px;
+   line-height: 76px;
+}
+.loaddata li{
+    list-style: none;
+    float: left;
+    margin-left: 30px;
+}
+.layui-btn.search{
+    background-color: #FF7C02;
+    color: #fff;
+}
+.layui-form-pane .layui-form-label{
+    border: none;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: @baseColor;
+}
+.layui-form-checked[lay-skin=primary] i{
+    border-color: @baseColor;
+    background-color: @baseColor;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i{
+    border-color: @baseColor;
+}
+.layui-form-select dl dd.layui-this{
+    background-color: @baseColor;
+}

@@ -1,13 +1,12 @@
-(function () {
-    layui.use(['form', 'element', 'table', 'layer'], function () {
+layui.use(['form', 'element', 'table', 'layer', 'vip_table'], function () {
         var $ = layui.jquery;
         var table = layui.table;
         var layer = layui.layer;
-
+        var v_table = layui.vip_table;
 
         var device = layui.device
 
-
+        console.log(v_table)
 
         var tableIns = table.render({
             elem: '#content-table',
@@ -16,7 +15,7 @@
             url: '../asset/js/data.json',
             method: 'get',
             where: {
-                id: 1
+                id: '要传的参数'
             },
             request: {
                 pageName: 'page',
@@ -73,15 +72,15 @@
     //    })
 
     $("#delItem").click(function(){
-        $('tbody input:checkbox:checked').parents('tr').remove()        
+        var $table = $('.layui-table').eq(1);
+        var ids = v_table.getIds($table,'data-index')   //返回选中行的主键  参数:表格元素，主键属性
+        v_table.deleteAll(ids,'./data.json','','')
+        // $('tbody input:checkbox:checked').parents('tr').remove()        
     })
 
     $('#addData').on('click',function(){
-        layer.open({
-            type: 1,
-            title: '添加内容',
-            content: '标题1'
-        })
+        
+
         tableIns.reload({
             done: function(){
                 console.log('又加载了一次')
@@ -108,4 +107,3 @@
     
 
     });
-})()
